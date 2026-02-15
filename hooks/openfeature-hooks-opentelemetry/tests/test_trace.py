@@ -17,7 +17,7 @@ def mock_get_current_span(monkeypatch):
     monkeypatch.setattr(trace, "get_current_span", Mock())
 
 
-def test_after(mock_get_current_span):
+def test_trace_after(mock_get_current_span):
     # Given
     hook = TracingHook()
     hook_context = HookContext(
@@ -56,7 +56,7 @@ def test_after(mock_get_current_span):
     )
 
 
-def test_after_evaluation_error(mock_get_current_span):
+def test_trace_after_evaluation_error(mock_get_current_span):
     # Given
     hook = TracingHook()
     hook_context = HookContext(
@@ -94,7 +94,7 @@ def test_after_evaluation_error(mock_get_current_span):
     )
 
 
-def test_error(mock_get_current_span):
+def test_trace_error(mock_get_current_span):
     # Given
     hook = TracingHook()
     hook_context = HookContext(
