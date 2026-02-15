@@ -1,4 +1,3 @@
-
 class Attributes:
     OTEL_CONTEXT_ID = "feature_flag.context.id"
     OTEL_EVENT_NAME = "feature_flag.evaluation"
