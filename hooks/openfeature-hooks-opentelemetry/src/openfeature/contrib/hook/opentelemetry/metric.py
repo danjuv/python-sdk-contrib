@@ -40,8 +40,9 @@ class MetricsHook(Hook):
     ) -> None:
         attributes = {
             Attributes.OTEL_FLAG_KEY: details.flag_key,
-            Attributes.OTEL_FLAG_VARIANT: details.variant,
         }
+        if details.variant:
+            attributes[Attributes.OTEL_FLAG_VARIANT] = details.variant
         if hook_context.provider_metadata:
             attributes[Attributes.OTEL_PROVIDER_NAME] = (
                 hook_context.provider_metadata.name
